@@ -16,6 +16,7 @@ export default class ShowProduct extends LightningElement {
         .catch(error => {
             this.error = error;
             this.products = undefined;
+            console.log(error);
         });
         
 

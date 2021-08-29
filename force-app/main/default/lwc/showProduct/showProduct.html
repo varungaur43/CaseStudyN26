@@ -1,22 +1,11 @@
 <template>
-    Good mroning....
-
-    
-    <template if:true={products}>
+    <lightning-card title="Customer Product Information" icon-name="custom:custom63">
+      <template if:true={products}>
         <template for:each={products} for:item="product">
-            <p key={product.Id}>{product.Name}</p>
-            <p key={product.Id}>{product.Product_Type__c}</p>
-            <p key={product.Id}>{product.Fees__c}</p> 
+            <p key={product.Id}> Product Name: {product.Name}</p>
+            <p key={product.Id}> Product Type: {product.Product_Type__c}</p>
+            <p key={product.Id}> Product Fees: {product.Fees__c}</p> 
         </template>
-        <div style="height: 300px;">
-            <lightning-datatable
-                    key-field="product.Id"
-                    data={data}
-                    columns={columns}>
-            </lightning-datatable>
-        </div>  
     </template>
-    <template if:true={error}>
-        
-    </template>
+    </lightning-card>
 </template>
